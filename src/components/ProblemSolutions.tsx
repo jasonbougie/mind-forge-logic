@@ -1,5 +1,6 @@
 import sockTan from "@/assets/sock-tan.jpg";
 import tankTan from "@/assets/tank-tan.jpg";
+import woodGrain from "@/assets/wood-grain-bg.jpg";
 
 const problems = [
   {
@@ -18,8 +19,16 @@ const problems = [
 
 const ProblemSolutions = () => {
   return (
-    <section className="py-20 bg-muted/50 wood-pattern">
-      <div className="container px-6 md:px-12">
+    <section className="relative py-20 overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={woodGrain}
+          alt="Wood grain background"
+          className="w-full h-full object-cover opacity-90"
+        />
+        <div className="absolute inset-0 bg-background/10" />
+      </div>
+      <div className="container relative z-10 px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
             Fix Any Tan Line Problem
