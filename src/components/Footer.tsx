@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="md:col-span-1">
-            <h3 className="text-2xl font-bold mb-4">Farmer Stan</h3>
+            <h3 className="text-2xl font-bold mb-4">Farmer's Tan</h3>
             <p className="text-primary-foreground/80">
               Sunless tanning for men, with a sense of humor.
             </p>
@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-primary-foreground/20 pt-8 text-center text-primary-foreground/60">
-          <p>© 2025 Farmer Stan. All rights reserved. No farmers were harmed in the making of this product.</p>
+          <p>© 2025 Farmer's Tan. All rights reserved. No farmers were harmed in the making of this product.</p>
           <p className="mt-2 text-sm">Powered by pure bro energy (and some really good skincare science).</p>
         </div>
       </div>

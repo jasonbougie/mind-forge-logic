@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ProductBenefits from "@/components/ProductBenefits";
 import ProductShowcase from "@/components/ProductShowcase";
@@ -10,6 +11,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <main>
+      <Header />
       <Hero />
       <ProductBenefits />
       <ProductShowcase />

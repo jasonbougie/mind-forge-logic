@@ -11,7 +11,7 @@ const Newsletter = () => {
     e.preventDefault();
     toast({
       title: "Welcome to the field, bro!",
-      description: "You're now subscribed to Farmer Stan's Field Reports.",
+      description: "You're now subscribed to Farmer's Tan Field Reports.",
     });
     setEmail("");
   };
@@ -21,10 +21,10 @@ const Newsletter = () => {
       <div className="container px-6 md:px-12">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Join Farmer Stan's Field Reports
+            Join the Farmer's Tan Field Reports
           </h2>
           <p className="text-lg text-white/90 mb-8">
-            Get tips, deals, and the latest from Stan. We promise our emails won't suck.
+            Get tips, deals, and the latest updates. We promise our emails won't suck.
           </p>
           
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
