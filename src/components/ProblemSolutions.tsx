@@ -11,7 +11,7 @@ const problems = [
   {
     image: tankTan,
     problem: "Tank-Top Tan Before Vacation?",
-    solution: "Farmer Stan to the rescue!",
+    solution: "Farmer's Tan to the rescue!",
     description: "Even out those gnarly shoulder lines in one application."
   }
 ];
@@ -22,10 +22,10 @@ const ProblemSolutions = () => {
       <div className="container px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
-            Got Tan Line Problems?
+            Fix Any Tan Line Problem
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We've all been there. Here's how Farmer's Tan fixes the most embarrassing tan line situations.
+            Whether it's from golf, working outdoors, or sports – Farmer's Tan evens out any awkward tan lines.
           </p>
         </div>
         

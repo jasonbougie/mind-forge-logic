@@ -21,7 +21,7 @@ const Hero = () => {
             No More Farmer's Tan
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-4 text-shadow-strong">
-            Get a Real Bro Glow in Minutes!
+            Get a Natural Bronze in Minutes!
           </p>
           <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl">
             The first sunless tanner made for men, with a sense of humor. No sunburn, no salon, no judgment.
@@ -32,7 +32,7 @@ const Hero = () => {
               size="lg"
               className="text-lg px-8 py-6 h-auto"
             >
-              Get Your Glow, Bro
+              Get Your Tan Now
             </Button>
             <Button 
               variant="outline" 

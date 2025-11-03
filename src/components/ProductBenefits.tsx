@@ -4,22 +4,22 @@ const benefits = [
   {
     icon: Check,
     title: "Natural-Looking",
-    description: "No Oompa Loompa Orange – just a subtle bronze that won't scream 'fake tan'."
+    description: "No Oompa Loompa Orange – just a subtle bronze that looks authentic and confident."
   },
   {
     icon: Zap,
     title: "Quick & Easy",
-    description: "10-minute application, quick-dry formula. Virtually impossible to mess up."
+    description: "10-minute application, quick-dry formula. Straightforward and effective."
   },
   {
     icon: Sparkles,
     title: "No Grease, No Odor",
-    description: "Won't stain your flannel. Water-based and lightweight – you'll forget you applied it."
+    description: "Won't stain your clothes. Water-based and lightweight – you'll forget you applied it."
   },
   {
     icon: Shield,
-    title: "Bro-Tested",
-    description: "Body-hair friendly and streak-free. Even first-timers get it right."
+    title: "Man-Tested",
+    description: "Body-hair friendly and streak-free. Built for men who don't have time for complicated routines."
   }
 ];
 
@@ -29,10 +29,10 @@ const ProductBenefits = () => {
       <div className="container px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
-            Why Bros Love It
+            Why Men Choose Farmer's Tan
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Look great without the weird chemicals, orange hue, or that suspicious coconut smell.
+            Professional results without the hassle, weird chemicals, or obvious fake tan look.
           </p>
         </div>
         

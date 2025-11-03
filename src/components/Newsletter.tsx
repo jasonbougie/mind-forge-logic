@@ -10,7 +10,7 @@ const Newsletter = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Welcome to the field, bro!",
+      title: "You're all set!",
       description: "You're now subscribed to Farmer's Tan Field Reports.",
     });
     setEmail("");

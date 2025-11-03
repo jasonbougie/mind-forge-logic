@@ -11,13 +11,13 @@ const testimonials = [
     name: "Mike, 29",
     subtitle: "Golf Enthusiast",
     rating: 5,
-    text: "Never thought I'd use a tanner, but this stuff is legit. My golf buddies couldn't figure out why I wasn't rocking the usual sock tan."
+    text: "Never thought I'd use a tanner, but this stuff is legit. Natural results that look like I actually spent time outdoors. No one suspects a thing."
   },
   {
     name: "Brad, 41",
     subtitle: "Weekend Warrior",
     rating: 5,
-    text: "Fixed my gnarly tank top lines in one application. Easy to use, doesn't smell weird, and actually works. What more could a bro ask for?"
+    text: "Fixed my gnarly tank top lines in one application. Easy to use, doesn't smell weird, and actually works. Gets the job done, period."
   }
 ];
 
@@ -27,10 +27,10 @@ const Testimonials = () => {
       <div className="container px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
-            Real Reviews from Real Bros
+            What Men Are Saying
           </h2>
           <p className="text-lg text-muted-foreground">
-            Join 1,000+ bros who've ditched their farmer's tan
+            Join 1,000+ men who've upgraded their tan game
           </p>
         </div>
         
