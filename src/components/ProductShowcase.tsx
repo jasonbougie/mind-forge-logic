@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import productBottle from "@/assets/product-bottle.jpg";
+import productBottle from "@/assets/product-bottles.png";
 
 const ProductShowcase = () => {
   return (
