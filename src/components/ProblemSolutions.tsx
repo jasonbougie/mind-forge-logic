@@ -1,4 +1,4 @@
-import sockTan from "@/assets/sock-tan.jpg";
+import sockTan from "@/assets/sock-tan.png";
 import tankTan from "@/assets/tank-tan.jpg";
 import woodGrain from "@/assets/wood-grain-bg.jpg";
 
