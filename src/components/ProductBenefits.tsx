@@ -1,25 +1,35 @@
-import { Check, Zap, Sparkles, Shield } from "lucide-react";
+import { Check, Zap, Sparkles, Shield, Leaf, Clock } from "lucide-react";
 
 const benefits = [
   {
-    icon: Check,
-    title: "Natural-Looking",
-    description: "No Oompa Loompa Orange – just a subtle bronze that looks authentic and confident."
-  },
-  {
     icon: Zap,
-    title: "Quick & Easy",
-    description: "10-minute application, quick-dry formula. Straightforward and effective."
+    title: "Instant Bronze",
+    description: "See results immediately – no waiting 6-8 hours. Perfect for when you need that glow now."
   },
   {
     icon: Sparkles,
-    title: "No Grease, No Odor",
-    description: "Won't stain your clothes. Water-based and lightweight – you'll forget you applied it."
+    title: "Spray-On Simplicity",
+    description: "Quick, streak-free application. No messy mitts or sleeping in it – just spray and go."
+  },
+  {
+    icon: Leaf,
+    title: "Cleaner Formula",
+    description: "Vegan, cruelty-free, paraben-free, gluten-free. Plus caffeine for that subtle skin-tightening perk."
   },
   {
     icon: Shield,
-    title: "Man-Tested",
-    description: "Body-hair friendly and streak-free. Built for men who don't have time for complicated routines."
+    title: "Complete System",
+    description: "Scrub + Barrier Cream + Tan Extender included. Pro-level results at home for about $2 per tan."
+  },
+  {
+    icon: Check,
+    title: "No BS Ingredients",
+    description: "Fewer preservatives, transparent formula. We tell you to refrigerate it – because we keep it real."
+  },
+  {
+    icon: Clock,
+    title: "Built for Real Life",
+    description: "Body-hair friendly, fade-proof, no weird odor. For men who don't have time for complicated routines."
   }
 ];
 
@@ -36,7 +46,7 @@ const ProductBenefits = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
