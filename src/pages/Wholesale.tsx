@@ -66,6 +66,7 @@ const Wholesale = () => {
     title: "Wholesale & Trade Partners | Dude Tan",
     description: "Carry Dude Tan in your barbershop or retail location. 50% retail margin. 12-unit minimum. Apply for a wholesale account today.",
   });
+  useJsonLd([wholesaleServiceSchema, wholesaleFaqSchema]);
 
   const scrollY = useScrollPosition();
   const stepsView = useInView({ threshold: 0.2 });

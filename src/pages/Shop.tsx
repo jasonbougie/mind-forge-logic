@@ -49,6 +49,7 @@ const Shop = () => {
     title: "Shop Dude Tan | Spray-On Sunless Tanner for Men",
     description: "Buy Dude Tan spray-on sunless tanner for men. Triple bronzer formula evens out farmer tans, sock tans, and t-shirt tan lines in 60 seconds. Free shipping over $35.",
   });
+  useJsonLd(shopItemListSchema);
 
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [loading, setLoading] = useState(true);
