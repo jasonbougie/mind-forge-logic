@@ -211,13 +211,14 @@ const Index = () => {
           </div>
 
           <div className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 ease-out delay-500 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-            <Button
-              variant="hero"
-              className="h-12 px-8 text-lg animate-glow-pulse shimmer-btn"
-              onClick={() => scrollTo("shop")}
-            >
-              SHOP NOW
-            </Button>
+            <Link to="/shop">
+              <Button
+                variant="hero"
+                className="h-12 px-8 text-lg animate-glow-pulse shimmer-btn"
+              >
+                SHOP NOW
+              </Button>
+            </Link>
             <Button variant="outline" className="h-12 px-8 text-lg border-2 border-foreground text-foreground hover:bg-foreground hover:text-background">
               WATCH THE AD
             </Button>
