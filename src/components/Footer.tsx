@@ -8,16 +8,16 @@ const Footer = () => {
           <div className="md:col-span-1">
             <img src={logo} alt="Dude Tan" className="h-12 mb-4" />
             <p className="text-primary-foreground/80">
-              Even it out, dude. 🤙
+              The first sunless tanner made for dudes. No sunburn, no salon, no judgment.
             </p>
           </div>
           
           <div>
             <h4 className="font-bold mb-4">Shop</h4>
             <ul className="space-y-2 text-primary-foreground/80">
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Dude Tan Spray</a></li>
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Starter Kit</a></li>
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Gift Sets</a></li>
+              <li><a href="/shop" className="hover:text-primary-foreground transition-colors">Dude Tan Spray</a></li>
+              <li><a href="/shop" className="hover:text-primary-foreground transition-colors">Starter Kit</a></li>
+              <li><a href="/shop" className="hover:text-primary-foreground transition-colors">Gift Sets</a></li>
             </ul>
           </div>
           
