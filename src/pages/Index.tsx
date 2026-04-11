@@ -191,11 +191,11 @@ const Index = () => {
           <img
             src={heroBg}
             alt="Guys hanging out on a golf course in the sun"
-            className="w-full h-full object-cover opacity-20 md:opacity-25"
+            className="w-full h-full object-cover opacity-40 md:opacity-50"
             width={1920}
             height={1024}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/50 to-background" />
         </div>
         <div
           className="absolute inset-0 animate-gradient-shift opacity-15 z-[1]"
