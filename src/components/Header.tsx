@@ -1,49 +1,39 @@
 import logo from "@/assets/farmers-tan-logo.png";
 import { Button } from "@/components/ui/button";
+import { CartDrawer } from "@/components/CartDrawer";
 
 const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <div className="container px-6 md:px-12 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <a href="/" className="flex items-center">
-            <img 
-              src={logo} 
-              alt="Farmer's Tan Logo" 
-              className="h-16 md:h-20 w-auto"
-            />
+            <img src={logo} alt="Farmer's Tan Logo" className="h-16 md:h-20 w-auto" />
           </a>
           
-          {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#product" className="text-foreground hover:text-primary font-medium transition-colors">
-              Product
-            </a>
-            <a href="#how-it-works" className="text-foreground hover:text-primary font-medium transition-colors">
-              How It Works
-            </a>
-            <a href="#reviews" className="text-foreground hover:text-primary font-medium transition-colors">
-              Reviews
-            </a>
-            <a href="#about" className="text-foreground hover:text-primary font-medium transition-colors">
-              About
-            </a>
+            <a href="#product" className="text-foreground hover:text-primary font-medium transition-colors">Product</a>
+            <a href="#shop" className="text-foreground hover:text-primary font-medium transition-colors">Shop</a>
+            <a href="#how-it-works" className="text-foreground hover:text-primary font-medium transition-colors">How It Works</a>
+            <a href="#reviews" className="text-foreground hover:text-primary font-medium transition-colors">Reviews</a>
+            <a href="#about" className="text-foreground hover:text-primary font-medium transition-colors">About</a>
           </nav>
           
-          {/* CTA */}
-          <Button variant="cta" className="hidden md:inline-flex">
-            Buy Now
-          </Button>
+          <div className="hidden md:flex items-center gap-3">
+            <CartDrawer />
+            <Button variant="cta">Buy Now</Button>
+          </div>
           
-          {/* Mobile Menu Button */}
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="4" x2="20" y1="12" y2="12"/>
-              <line x1="4" x2="20" y1="6" y2="6"/>
-              <line x1="4" x2="20" y1="18" y2="18"/>
-            </svg>
-          </Button>
+          <div className="flex items-center gap-2 md:hidden">
+            <CartDrawer />
+            <Button variant="ghost" size="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="4" x2="20" y1="12" y2="12"/>
+                <line x1="4" x2="20" y1="6" y2="6"/>
+                <line x1="4" x2="20" y1="18" y2="18"/>
+              </svg>
+            </Button>
+          </div>
         </div>
       </div>
     </header>
