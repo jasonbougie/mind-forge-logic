@@ -1,11 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { Star, ShoppingCart, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import logo from "@/assets/dudetan-logo.png";
-import { useCartStore } from "@/stores/cartStore";
-import { storefrontApiRequest, STOREFRONT_PRODUCTS_QUERY } from "@/lib/shopify";
 import { CartDrawer } from "@/components/CartDrawer";
 import { useInView } from "@/hooks/useInView";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
@@ -74,8 +73,6 @@ const Index = () => {
   const [email, setEmail] = useState("");
   const [mounted, setMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { addItem, isLoading } = useCartStore();
-  const [shopifyProduct, setShopifyProduct] = useState<any>(null);
   const scrollY = useScrollPosition();
   const activeSection = useActiveSection(NAV_SECTIONS);
 
@@ -89,12 +86,6 @@ const Index = () => {
 
   useEffect(() => {
     setMounted(true);
-    storefrontApiRequest(STOREFRONT_PRODUCTS_QUERY, { first: 1 })
-      .then((data) => {
-        const product = data?.data?.products?.edges?.[0];
-        if (product) setShopifyProduct(product);
-      })
-      .catch(console.error);
   }, []);
 
   const handleEmailSubmit = (e: React.FormEvent) => {
