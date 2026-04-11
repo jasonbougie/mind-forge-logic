@@ -223,8 +223,9 @@ const Index = () => {
 
           <div className={`space-y-4 max-w-2xl transition-all duration-1000 ease-out delay-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <h1 className="text-4xl md:text-6xl font-bold text-foreground">
-              Even it out, dude.
+              Fix Your Farmer Tan — Sunless Tanner for Men
             </h1>
+            <span className="sr-only">Dude Tan spray-on self tanner for men fixes uneven farmer tans, sock tans, and t-shirt tan lines in 60 seconds.</span>
             <p className="text-lg md:text-xl text-muted-foreground">
               The first sunless tanner made for <span className="font-bold text-accent">DUDES</span>. No sunburn, no salon, no judgment.
             </p>

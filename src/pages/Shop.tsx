@@ -143,7 +143,7 @@ const Shop = () => {
             <RevealSection delay={0.15}>
               <p className="text-xs font-bold tracking-[0.3em] text-accent mb-4">THE GOODS</p>
               <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-                Even it out, dude.
+                Shop Dude Tan — Spray-On Sunless Tanner for Men
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-lg">
                 The only sunless tanner that doesn't make you feel like you're sneaking into a spa. Spray on, walk out even. That's it.
