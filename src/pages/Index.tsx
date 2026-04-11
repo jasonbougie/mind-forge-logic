@@ -1,11 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { Star, ShoppingCart, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import logo from "@/assets/dudetan-logo.png";
-import { useCartStore } from "@/stores/cartStore";
-import { storefrontApiRequest, STOREFRONT_PRODUCTS_QUERY } from "@/lib/shopify";
 import { CartDrawer } from "@/components/CartDrawer";
 import { useInView } from "@/hooks/useInView";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
@@ -74,8 +73,6 @@ const Index = () => {
   const [email, setEmail] = useState("");
   const [mounted, setMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { addItem, isLoading } = useCartStore();
-  const [shopifyProduct, setShopifyProduct] = useState<any>(null);
   const scrollY = useScrollPosition();
   const activeSection = useActiveSection(NAV_SECTIONS);
 
@@ -89,12 +86,6 @@ const Index = () => {
 
   useEffect(() => {
     setMounted(true);
-    storefrontApiRequest(STOREFRONT_PRODUCTS_QUERY, { first: 1 })
-      .then((data) => {
-        const product = data?.data?.products?.edges?.[0];
-        if (product) setShopifyProduct(product);
-      })
-      .catch(console.error);
   }, []);
 
   const handleEmailSubmit = (e: React.FormEvent) => {
@@ -105,20 +96,8 @@ const Index = () => {
     }
   };
 
-  const handleAddToCart = async () => {
-    if (!shopifyProduct) return;
-    const variant = shopifyProduct.node.variants.edges[0]?.node;
-    if (!variant) return;
-    await addItem({
-      product: shopifyProduct,
-      variantId: variant.id,
-      variantTitle: variant.title,
-      price: variant.price,
-      quantity: 1,
-      selectedOptions: variant.selectedOptions,
-    });
-    toast.success("Added to cart!");
-  };
+
+
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -164,8 +143,10 @@ const Index = () => {
             <button onClick={() => scrollTo("problem")} className={navLinkClass("problem")}>The Problem</button>
             <button onClick={() => scrollTo("how-it-works")} className={navLinkClass("how-it-works")}>How It Works</button>
             <button onClick={() => scrollTo("reviews")} className={navLinkClass("reviews")}>Reviews</button>
+            <Link to="/shop" className="text-foreground hover:text-accent font-medium transition-colors text-sm">Shop</Link>
+            <Link to="/merch" className="text-foreground hover:text-accent font-medium transition-colors text-sm">Merch</Link>
             <CartDrawer />
-            <Button variant="hero" size="sm" onClick={() => scrollTo("shop")}>Shop Now</Button>
+
           </div>
 
           <div className="flex items-center gap-2 md:hidden">
@@ -194,7 +175,8 @@ const Index = () => {
             <button onClick={() => scrollTo("problem")} className="text-foreground font-medium text-left">The Problem</button>
             <button onClick={() => scrollTo("how-it-works")} className="text-foreground font-medium text-left">How It Works</button>
             <button onClick={() => scrollTo("reviews")} className="text-foreground font-medium text-left">Reviews</button>
-            <Button variant="hero" size="sm" onClick={() => scrollTo("shop")}>Shop Now</Button>
+            <Link to="/shop" className="text-foreground font-medium" onClick={() => setMobileMenuOpen(false)}>Shop</Link>
+            <Link to="/merch" className="text-foreground font-medium" onClick={() => setMobileMenuOpen(false)}>Merch</Link>
           </div>
         )}
       </nav>
@@ -229,13 +211,14 @@ const Index = () => {
           </div>
 
           <div className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 ease-out delay-500 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-            <Button
-              variant="hero"
-              className="h-12 px-8 text-lg animate-glow-pulse shimmer-btn"
-              onClick={() => scrollTo("shop")}
-            >
-              SHOP NOW
-            </Button>
+            <Link to="/shop">
+              <Button
+                variant="hero"
+                className="h-12 px-8 text-lg animate-glow-pulse shimmer-btn"
+              >
+                SHOP NOW
+              </Button>
+            </Link>
             <Button variant="outline" className="h-12 px-8 text-lg border-2 border-foreground text-foreground hover:bg-foreground hover:text-background">
               WATCH THE AD
             </Button>
@@ -429,14 +412,14 @@ const Index = () => {
           </RevealSection>
 
           <RevealSection delay={0.3}>
-            <Button
-              variant="hero"
-              className="h-14 px-12 text-lg mb-4 shimmer-btn"
-              onClick={handleAddToCart}
-              disabled={isLoading || !shopifyProduct}
-            >
-              {isLoading ? "ADDING..." : "ADD TO CART"}
-            </Button>
+            <Link to="/shop">
+              <Button
+                variant="hero"
+                className="h-14 px-12 text-lg mb-4 shimmer-btn"
+              >
+                SHOP NOW
+              </Button>
+            </Link>
             <p className="text-xs text-muted-foreground mt-4">
               Free shipping over $35 · 30-day money back guarantee · No questions asked
             </p>
