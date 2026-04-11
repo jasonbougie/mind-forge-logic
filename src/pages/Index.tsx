@@ -145,7 +145,7 @@ const Index = () => {
       >
         <div className="container px-6 md:px-12 py-3 flex items-center justify-between">
           <button onClick={() => scrollTo("hero")} className="flex-shrink-0">
-            <img src={logo} alt="Dude Tan" className="h-10 md:h-12 w-auto" />
+            <img src={logo} alt="Dude Tan" className="h-10 md:h-12 w-auto" width={200} height={80} />
           </button>
 
           <div className="hidden md:flex items-center gap-8">
@@ -220,6 +220,8 @@ const Index = () => {
               src={logo}
               alt="Dude Tan sunless tanner for men logo"
               className="w-72 md:w-96 rounded-lg animate-subtle-float"
+              width={400}
+              height={160}
             />
           </div>
 
@@ -473,7 +475,7 @@ const Index = () => {
       {/* ── 9. Footer ── */}
       <footer className="py-12 bg-muted border-t border-border">
         <div className="container px-6 md:px-12 text-center">
-          <img src={logo} alt="Dude Tan" className="h-12 mx-auto mb-4" />
+          <img src={logo} alt="Dude Tan" className="h-12 mx-auto mb-4" width={200} height={80} />
           <p className="text-sm text-muted-foreground mb-6">Even it out, dude. 🤙</p>
 
           <div className="w-16 h-px bg-accent/50 mx-auto mb-6" />
