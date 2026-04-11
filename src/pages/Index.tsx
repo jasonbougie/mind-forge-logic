@@ -3,9 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import logo from "@/assets/dudetan-logo.jpg";
-
-const FloatingEmoji = ({ emoji, delay, duration, left }: { emoji: string; delay: number; duration: number; left: number }) => (
-  <span
     className="absolute text-2xl md:text-3xl pointer-events-none select-none animate-float opacity-0"
     style={{
       left: `${left}%`,
