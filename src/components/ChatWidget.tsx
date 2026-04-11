@@ -97,13 +97,52 @@ async function streamChat({
   onDone();
 }
 
+const NUDGE_MESSAGES = [
+  "Got a farmer tan? Ask me about it.",
+  "Wondering how to even it out, dude?",
+  "Got questions? I got answers.",
+  "First time? I'll walk you through it.",
+];
+
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [nudge, setNudge] = useState<string | null>(null);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Nudge bubble: show after 5s, rotate every 8s, hide after interaction
+  useEffect(() => {
+    if (hasInteracted || isOpen) {
+      setNudge(null);
+      return;
+    }
+
+    const showTimer = setTimeout(() => {
+      setNudge(NUDGE_MESSAGES[0]);
+    }, 5000);
+
+    const rotateTimer = setInterval(() => {
+      setNudge((prev) => {
+        const idx = prev ? NUDGE_MESSAGES.indexOf(prev) : -1;
+        return NUDGE_MESSAGES[(idx + 1) % NUDGE_MESSAGES.length];
+      });
+    }, 8000);
+
+    return () => {
+      clearTimeout(showTimer);
+      clearInterval(rotateTimer);
+    };
+  }, [hasInteracted, isOpen]);
+
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+    setHasInteracted(true);
+    setNudge(null);
+  };
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -159,11 +198,34 @@ const ChatWidget = () => {
 
   return (
     <>
+      {/* Nudge speech bubble */}
+      {nudge && !isOpen && (
+        <div
+          className="fixed bottom-[88px] right-6 z-[60] animate-fade-in cursor-pointer"
+          onClick={handleOpen}
+        >
+          <div className="bg-card border border-border rounded-xl rounded-br-sm shadow-lg px-4 py-3 max-w-[220px] relative">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setHasInteracted(true);
+                setNudge(null);
+              }}
+              className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-muted text-muted-foreground flex items-center justify-center text-xs hover:bg-accent transition-colors"
+              aria-label="Dismiss"
+            >
+              ×
+            </button>
+            <p className="text-sm font-serif text-foreground font-medium">{nudge}</p>
+          </div>
+        </div>
+      )}
+
       {/* Floating button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={handleOpen}
         aria-label={isOpen ? "Close chat" : "Chat with us"}
-        className="fixed bottom-6 right-6 z-[60] w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center hover:scale-105 overflow-hidden border-2 border-primary"
+        className={`fixed bottom-6 right-6 z-[60] w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center hover:scale-105 overflow-hidden border-2 border-primary ${!hasInteracted && !isOpen ? "animate-[bounce_2s_ease-in-out_infinite]" : ""}`}
       >
         {isOpen ? (
           <div className="w-full h-full bg-primary flex items-center justify-center text-primary-foreground">
