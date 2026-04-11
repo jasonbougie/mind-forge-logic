@@ -36,7 +36,7 @@ const Footer = () => {
             <ul className="space-y-2 text-primary-foreground/80">
               <li><a href="https://www.instagram.com/dude_tan/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">Instagram</a></li>
               <li><a href="https://www.tiktok.com/@thedude.tan" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">TikTok</a></li>
-              <li><a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">X / Twitter</a></li>
+              <li><a href="https://www.youtube.com/channel/UC7i7vdEAUgWR6uoSlnLPNaw" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">YouTube</a></li>
             </ul>
           </div>
         </div>
