@@ -133,7 +133,7 @@ const Wholesale = () => {
           <RevealSection>
             <p className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent mb-6">TRADE & WHOLESALE PROGRAM</p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-background mb-6">
-              Put Dude Tan on your shelf. Your clients will grab it themselves.
+              Wholesale Sunless Tanner for Men — Dude Tan Trade Program
             </h1>
             <p className="text-lg text-background/60 mb-10 max-w-2xl mx-auto">
               We make a product your male clients already need. You make margin every time a barber hands one across the chair. Simple as that.
