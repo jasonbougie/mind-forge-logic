@@ -8,6 +8,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CartDrawer } from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Star } from "lucide-react";
+import wholesaleDisplay from "@/assets/wholesale-display.png";
 import { useInView } from "@/hooks/useInView";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 import { toast } from "sonner";
@@ -111,8 +112,18 @@ const Wholesale = () => {
       </nav>
 
       {/* ── 3. Hero ── */}
-      <section className="py-16 md:py-24 bg-foreground">
-        <div className="container px-6 md:px-12 text-center max-w-4xl mx-auto">
+      <section className="relative py-16 md:py-24 bg-foreground overflow-hidden">
+        {/* Background display image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={wholesaleDisplay}
+            alt="Dude Tan counter display in a barbershop"
+            className="w-full h-full object-cover opacity-20 md:opacity-25"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/80 to-foreground" />
+        </div>
+
+        <div className="relative z-10 container px-6 md:px-12 text-center max-w-4xl mx-auto">
           <RevealSection>
             <p className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent mb-6">TRADE & WHOLESALE PROGRAM</p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-background mb-6">
@@ -137,7 +148,7 @@ const Wholesale = () => {
           <RevealSection delay={0.25}>
             <div className="flex flex-wrap justify-center gap-3">
               {["Competitive wholesale pricing", "Low minimum orders", "Net 30 available"].map((pill) => (
-                <span key={pill} className="bg-card/10 border border-background/20 text-background/80 px-4 py-2 rounded-full text-sm font-medium">
+                <span key={pill} className="bg-card/10 border border-background/20 text-background/80 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
                   {pill}
                 </span>
               ))}
