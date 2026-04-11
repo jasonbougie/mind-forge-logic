@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import logo from "@/assets/dudetan-logo.png";
+import heroBg from "@/assets/hero-bg.jpg";
 import { CartDrawer } from "@/components/CartDrawer";
 import { useInView } from "@/hooks/useInView";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
@@ -185,12 +186,23 @@ const Index = () => {
 
       {/* ── 3. Hero Section — parallax bg + animated CTA ── */}
       <section id="hero" className="relative overflow-hidden py-16 md:py-24">
+        {/* Hero background image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={heroBg}
+            alt="Guys hanging out on a golf course in the sun"
+            className="w-full h-full object-cover opacity-20 md:opacity-25"
+            width={1920}
+            height={1024}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
+        </div>
         <div
-          className="absolute inset-0 animate-gradient-shift opacity-30"
+          className="absolute inset-0 animate-gradient-shift opacity-15 z-[1]"
           style={{ transform: `translateY(${scrollY * 0.15}px)` }}
         />
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/10 blur-[120px] animate-pulse-glow"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/10 blur-[120px] animate-pulse-glow z-[1]"
           style={{ transform: `translate(-50%, calc(-50% + ${scrollY * 0.1}px))` }}
         />
 
