@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import usePageMeta from "@/hooks/usePageMeta";
 import { storefrontApiRequest, PRODUCT_BY_HANDLE_QUERY } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { Button } from "@/components/ui/button";
@@ -16,6 +17,22 @@ const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const addItem = useCartStore(state => state.addItem);
   const isLoading = useCartStore(state => state.isLoading);
+
+  useEffect(() => {
+    if (product) {
+      document.title = `${product.title} | Dude Tan`;
+      const desc = product.description
+        ? product.description.substring(0, 155) + " | Buy at dudetan.shop"
+        : "Shop this product at Dude Tan — the first sunless tanner built for men. | Buy at dudetan.shop";
+      const meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+      if (meta) meta.setAttribute("content", desc);
+    }
+    return () => {
+      document.title = "Dude Tan | Sunless Tanner for Men — Even It Out, Dude.";
+      const meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+      if (meta) meta.setAttribute("content", "Dude Tan is the first spray-on sunless tanner built specifically for men. Fix your farmer tan, sock tan, or t-shirt tan line in 60 seconds. Triple bronzer formula. No streaks, no smell, no salon.");
+    };
+  }, [product]);
 
   useEffect(() => {
     const fetchProduct = async () => {

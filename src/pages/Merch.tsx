@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import usePageMeta from "@/hooks/usePageMeta";
 import { storefrontApiRequest, STOREFRONT_PRODUCTS_QUERY, ShopifyProduct } from "@/lib/shopify";
 import { Button } from "@/components/ui/button";
 import { CartDrawer } from "@/components/CartDrawer";
@@ -17,6 +18,11 @@ const RevealSection = ({ children, className = "", delay = 0 }: { children: Reac
 };
 
 const Merch = () => {
+  usePageMeta({
+    title: "Dude Tan Merch | Hats, Shirts & Gear",
+    description: "Rep the brand. Dude Tan hats, shirts, and hoodies for men who like to even it out.",
+  });
+
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [loading, setLoading] = useState(true);
 
