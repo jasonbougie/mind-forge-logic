@@ -11,6 +11,7 @@ import { useInView } from "@/hooks/useInView";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import usePageMeta from "@/hooks/usePageMeta";
+import { useJsonLd, organizationSchema, webSiteSchema } from "@/lib/structuredData";
 
 /* ── Scroll-reveal wrapper ── */
 const RevealSection = ({
@@ -76,6 +77,7 @@ const Index = () => {
     title: "Dude Tan | Fix Your Farmer Tan — Sunless Tanner for Men",
     description: "The first spray-on sunless tanner made for men. Fix your farmer tan, sock tan, or t-shirt tan line in 60 seconds with Dude Tan's triple bronzer formula. No streaks, no smell, no judgment.",
   });
+  useJsonLd([organizationSchema, webSiteSchema]);
 
   const [email, setEmail] = useState("");
   const [mounted, setMounted] = useState(false);

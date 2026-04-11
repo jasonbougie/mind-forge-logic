@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import usePageMeta from "@/hooks/usePageMeta";
+import { useJsonLd, wholesaleServiceSchema, wholesaleFaqSchema } from "@/lib/structuredData";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
