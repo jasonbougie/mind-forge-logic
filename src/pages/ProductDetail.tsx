@@ -124,7 +124,7 @@ const ProductDetail = () => {
               {images[selectedImage]?.node ? (
                 <img
                   src={images[selectedImage].node.url}
-                  alt={images[selectedImage].node.altText || product.title}
+                  alt={images[selectedImage].node.altText || `${product.title} — Dude Tan sunless tanner for men`}
                   className="w-full h-full object-cover"
                 />
               ) : (
@@ -141,7 +141,7 @@ const ProductDetail = () => {
                     onClick={() => setSelectedImage(i)}
                     className={`w-20 h-20 rounded-md overflow-hidden flex-shrink-0 border-2 ${i === selectedImage ? 'border-primary' : 'border-transparent'}`}
                   >
-                    <img src={img.node.url} alt="" className="w-full h-full object-cover" />
+                    <img src={img.node.url} alt={img.node.altText || `${product.title} — Dude Tan sunless tanner for men`} className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>

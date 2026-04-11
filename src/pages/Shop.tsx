@@ -133,7 +133,7 @@ const Shop = () => {
                 <div className="absolute inset-0 bg-accent/5 rounded-full blur-3xl scale-110" />
                 <img
                   src={bottleFloating}
-                  alt="Dude Tan spray bottle floating"
+                  alt="Dude Tan spray-on sunless tanner bottle for men"
                   className="relative w-64 md:w-80 animate-subtle-float drop-shadow-2xl"
                   width={800}
                   height={1024}
@@ -183,7 +183,7 @@ const Shop = () => {
               <div className="relative h-full min-h-[300px] md:min-h-[500px] rounded-xl overflow-hidden group">
                 <img
                   src={lifestyleBeach}
-                  alt="Man at the beach with an even natural tan"
+                  alt="Man at beach with natural-looking even tan from Dude Tan spray tanner"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                   width={768}
@@ -198,7 +198,7 @@ const Shop = () => {
               <div className="relative h-48 md:h-60 rounded-xl overflow-hidden group">
                 <img
                   src={lifestyleBbq}
-                  alt="Man at a barbecue showing off even tan in a tank top"
+                  alt="Man with even tan at barbecue after using Dude Tan sunless tanner"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                   width={1024}
@@ -213,7 +213,7 @@ const Shop = () => {
               <div className="relative h-48 md:h-60 rounded-xl overflow-hidden group">
                 <img
                   src={lifestyleResults}
-                  alt="Close-up of even golden tan on man's chest and shoulder"
+                  alt="Even golden tan on man's chest and shoulders after using Dude Tan"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                   width={1024}
@@ -362,7 +362,7 @@ const Shop = () => {
             <RevealSection>
               <img
                 src={bottleFloating}
-                alt="Dude Tan bottle"
+                alt="Dude Tan triple bronzer formula spray bottle"
                 className="w-32 md:w-40 mx-auto mb-8 animate-subtle-float drop-shadow-xl"
                 loading="lazy"
                 width={800}
