@@ -128,6 +128,8 @@ const ProductDetail = () => {
                   className="w-full h-full object-cover"
                   width={800}
                   height={800}
+                  loading="eager"
+                  fetchPriority="high"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
@@ -143,7 +145,7 @@ const ProductDetail = () => {
                     onClick={() => setSelectedImage(i)}
                     className={`w-20 h-20 rounded-md overflow-hidden flex-shrink-0 border-2 ${i === selectedImage ? 'border-primary' : 'border-transparent'}`}
                   >
-                    <img src={img.node.url} alt={img.node.altText || `${product.title} — Dude Tan sunless tanner for men`} className="w-full h-full object-cover" width={80} height={80} />
+                    <img src={img.node.url} alt={img.node.altText || `${product.title} — Dude Tan sunless tanner for men`} className="w-full h-full object-cover" width={80} height={80} loading="lazy" />
                   </button>
                 ))}
               </div>

@@ -107,7 +107,7 @@ const Wholesale = () => {
               <ArrowLeft className="h-5 w-5" />
             </Link>
             <Link to="/" className="flex-shrink-0">
-              <img src={logo} alt="Dude Tan" className="h-10 md:h-12 w-auto" width={200} height={80} />
+              <img src={logo} alt="Dude Tan" className="h-10 md:h-12 w-auto" width={200} height={80} fetchPriority="high" />
             </Link>
           </div>
           <div className="flex items-center gap-4">
@@ -129,6 +129,8 @@ const Wholesale = () => {
             className="w-full h-full object-cover opacity-50 md:opacity-60"
             width={1024}
             height={768}
+            loading="eager"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/30 via-foreground/50 to-foreground/80" />
         </div>
