@@ -10,6 +10,7 @@ import Merch from "./pages/Merch";
 import Wholesale from "./pages/Wholesale";
 import ProductDetail from "./pages/ProductDetail";
 import NotFound from "./pages/NotFound";
+import ChatWidget from "./components/ChatWidget";
 
 const queryClient = new QueryClient();
 
