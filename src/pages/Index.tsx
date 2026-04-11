@@ -145,7 +145,7 @@ const Index = () => {
       >
         <div className="container px-6 md:px-12 py-3 flex items-center justify-between">
           <button onClick={() => scrollTo("hero")} className="flex-shrink-0">
-            <img src={logo} alt="Dude Tan" className="h-10 md:h-12 w-auto" width={200} height={80} fetchPriority="high" />
+            <img src={logo} alt="Dude Tan" className="h-[3.75rem] md:h-[4.5rem] w-auto" width={200} height={80} fetchPriority="high" />
           </button>
 
           <div className="hidden md:flex items-center gap-8">
