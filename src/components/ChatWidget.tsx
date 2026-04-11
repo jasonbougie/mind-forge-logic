@@ -225,7 +225,7 @@ const ChatWidget = () => {
       <button
         onClick={handleOpen}
         aria-label={isOpen ? "Close chat" : "Chat with us"}
-        className={`fixed bottom-6 right-6 z-[60] w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center hover:scale-105 overflow-hidden border-2 border-primary ${!hasInteracted && !isOpen ? "animate-[bounce_2s_ease-in-out_infinite]" : ""}`}
+        className={`fixed bottom-6 right-6 z-[60] w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center hover:scale-105 overflow-hidden border-2 border-primary ${!hasInteracted && !isOpen ? "animate-[bounce_2s_ease-in-out_infinite]" : ""} ${isOpen ? "hidden md:flex" : ""}`}
       >
         {isOpen ? (
           <div className="w-full h-full bg-primary flex items-center justify-center text-primary-foreground">
@@ -238,14 +238,21 @@ const ChatWidget = () => {
 
       {/* Chat panel */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-[60] w-[360px] max-w-[calc(100vw-2rem)] h-[500px] max-h-[calc(100vh-8rem)] bg-card border border-border rounded-xl shadow-2xl flex flex-col overflow-hidden">
+        <div className="fixed z-[60] bg-card border border-border shadow-2xl flex flex-col overflow-hidden md:bottom-24 md:right-6 md:w-[360px] md:h-[500px] md:max-h-[calc(100vh-8rem)] md:rounded-xl inset-0 md:inset-auto">
           {/* Header */}
           <div className="bg-foreground text-background px-4 py-3 flex items-center gap-3 shrink-0">
             <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-accent-foreground font-bold text-sm">B</div>
-            <div>
+            <div className="flex-1">
               <p className="font-bold text-sm font-serif">Bronzon</p>
               <p className="text-xs opacity-75">Dude Tan Support</p>
             </div>
+            <button
+              onClick={handleOpen}
+              className="md:hidden w-8 h-8 flex items-center justify-center rounded-full hover:bg-background/20 transition-colors text-background"
+              aria-label="Close chat"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+            </button>
           </div>
 
           {/* Messages */}
@@ -292,7 +299,7 @@ const ChatWidget = () => {
           </div>
 
           {/* Input */}
-          <div className="border-t border-border p-3 shrink-0">
+          <div className="border-t border-border p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shrink-0">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
