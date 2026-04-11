@@ -493,7 +493,7 @@ const Index = () => {
             {[
               { name: "Instagram", url: "https://www.instagram.com/dude_tan/" },
               { name: "TikTok", url: "https://www.tiktok.com/@thedude.tan" },
-              { name: "YouTube", url: "https://www.youtube.com/channel/UC7i7vdEAUgWR6uoSlnLPNaw" },
+              { name: "YouTube", url: "https://www.youtube.com/@DudeTan_Shop" },
             ].map((social) => (
               <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="text-sm text-foreground hover:text-accent transition-colors font-medium hover:scale-110 transition-transform duration-200 inline-block">
                 {social.name}
