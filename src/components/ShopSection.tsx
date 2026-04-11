@@ -76,6 +76,8 @@ const ShopSection = () => {
                           src={image.url}
                           alt={image.altText || `${product.node.title} — Dude Tan`}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          width={800}
+                          height={800}
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">

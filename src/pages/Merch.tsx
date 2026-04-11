@@ -50,7 +50,7 @@ const Merch = () => {
       <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
         <div className="container px-6 md:px-12 py-3 flex items-center justify-between">
           <Link to="/" className="flex-shrink-0">
-            <img src={logo} alt="Dude Tan logo" className="h-10 md:h-12 w-auto" />
+            <img src={logo} alt="Dude Tan logo" className="h-10 md:h-12 w-auto" width={200} height={80} />
           </Link>
           <div className="flex items-center gap-4">
             <Link to="/shop" className="text-foreground hover:text-accent font-medium transition-colors text-sm hidden md:block">Shop Tanner</Link>

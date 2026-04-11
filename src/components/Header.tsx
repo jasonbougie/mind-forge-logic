@@ -9,7 +9,7 @@ const Header = () => {
       <div className="container px-6 md:px-12 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="Dude Tan sunless tanner for men" className="h-16 md:h-20 w-auto" />
+            <img src={logo} alt="Dude Tan sunless tanner for men" className="h-16 md:h-20 w-auto" width={200} height={80} />
           </Link>
           
           <nav className="hidden md:flex items-center gap-8">
