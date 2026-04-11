@@ -490,9 +490,13 @@ const Index = () => {
           <div className="w-16 h-px bg-accent/50 mx-auto mb-6" />
 
           <div className="flex justify-center gap-6 mb-6">
-            {["Instagram", "TikTok", "X"].map((social) => (
-              <a key={social} href="#" className="text-sm text-foreground hover:text-accent transition-colors font-medium hover:scale-110 transition-transform duration-200 inline-block">
-                {social}
+            {[
+              { name: "Instagram", url: "https://www.instagram.com/dude_tan" },
+              { name: "TikTok", url: "https://www.tiktok.com/@thedude.tan" },
+              { name: "X", url: "https://twitter.com/thedude_tan" },
+            ].map((social) => (
+              <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="text-sm text-foreground hover:text-accent transition-colors font-medium hover:scale-110 transition-transform duration-200 inline-block">
+                {social.name}
               </a>
             ))}
           </div>
