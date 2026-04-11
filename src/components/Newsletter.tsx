@@ -1,30 +1,26 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
-  const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "You're all set!",
-      description: "You're now subscribed to Farmer's Tan Field Reports.",
-    });
+    toast.success("You're on the list, dude! Drops and deals incoming.");
     setEmail("");
   };
 
   return (
-    <section className="py-20 gradient-hero">
+    <section className="py-20 bg-primary">
       <div className="container px-6 md:px-12">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Join the Farmer's Tan Field Reports
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary-foreground">
+            Stay in the loop, dude.
           </h2>
-          <p className="text-lg text-white/90 mb-8">
-            Get tips, deals, and the latest updates. We promise our emails won't suck.
+          <p className="text-lg text-primary-foreground/90 mb-8">
+            New drops, deals, and stuff that doesn't suck. Straight to your inbox.
           </p>
           
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
@@ -34,15 +30,14 @@ const Newsletter = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="flex-1 bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:bg-white/20"
+              className="flex-1 bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground placeholder:text-primary-foreground/60 focus:bg-primary-foreground/20"
             />
             <Button 
               type="submit" 
               variant="hero" 
               size="lg"
-              className="bg-white text-primary hover:bg-white/90"
             >
-              Subscribe
+              Count Me In 🤙
             </Button>
           </form>
         </div>
