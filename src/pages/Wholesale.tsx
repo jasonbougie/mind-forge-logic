@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CartDrawer } from "@/components/CartDrawer";
-import { Footer } from "@/components/Footer";
+import Footer from "@/components/Footer";
 import { ArrowLeft, Star } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
