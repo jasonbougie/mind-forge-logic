@@ -29,7 +29,7 @@ const Index = () => {
             Coming Soon
           </h1>
           <p className="text-lg text-muted-foreground">
-            The first sunless tanner made for dudes. No sunburn, no salon, no judgment.
+            A sunless tanner made for dudes. No sunburn, no salon, no judgment.
           </p>
         </div>
 
