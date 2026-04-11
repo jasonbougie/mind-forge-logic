@@ -19,6 +19,21 @@ const ProductDetail = () => {
   const isLoading = useCartStore(state => state.isLoading);
 
   useEffect(() => {
+    if (product) {
+      document.title = `${product.title} | Dude Tan`;
+      const desc = product.description
+        ? product.description.substring(0, 155) + " | Buy at dudetan.shop"
+        : "Shop this product at Dude Tan — the first sunless tanner built for men. | Buy at dudetan.shop";
+      const meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+      if (meta) meta.setAttribute("content", desc);
+    }
+    return () => {
+      document.title = "Dude Tan | Sunless Tanner for Men — Even It Out, Dude.";
+      const meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+      if (meta) meta.setAttribute("content", "Dude Tan is the first spray-on sunless tanner built specifically for men. Fix your farmer tan, sock tan, or t-shirt tan line in 60 seconds. Triple bronzer formula. No streaks, no smell, no salon.");
+    };
+  }, [product]);
+
     const fetchProduct = async () => {
       if (!handle) return;
       try {
