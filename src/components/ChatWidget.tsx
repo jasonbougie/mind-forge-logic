@@ -238,7 +238,7 @@ const ChatWidget = () => {
 
       {/* Chat panel */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-[60] w-[360px] max-w-[calc(100vw-2rem)] h-[500px] max-h-[calc(100vh-8rem)] bg-card border border-border rounded-xl shadow-2xl flex flex-col overflow-hidden">
+        <div className="fixed z-[60] bg-card border border-border shadow-2xl flex flex-col overflow-hidden md:bottom-24 md:right-6 md:w-[360px] md:h-[500px] md:max-h-[calc(100vh-8rem)] md:rounded-xl inset-0 md:inset-auto">
           {/* Header */}
           <div className="bg-foreground text-background px-4 py-3 flex items-center gap-3 shrink-0">
             <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-accent-foreground font-bold text-sm">B</div>
