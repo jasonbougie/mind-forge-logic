@@ -3,16 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import logo from "@/assets/dudetan-logo.jpg";
-    className="absolute text-2xl md:text-3xl pointer-events-none select-none animate-float opacity-0"
-    style={{
-      left: `${left}%`,
-      animationDelay: `${delay}s`,
-      animationDuration: `${duration}s`,
-    }}
-  >
-    {emoji}
-  </span>
-);
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -30,8 +20,6 @@ const Index = () => {
     }
   };
 
-  const emojis = ["🤙", "☀️", "🏄", "🔥", "💪", "😎", "🌴", "🤘"];
-
   return (
     <main className="min-h-screen bg-background relative overflow-hidden flex flex-col items-center justify-center px-6 py-12">
       {/* Animated gradient background */}
@@ -39,19 +27,6 @@ const Index = () => {
       
       {/* Animated radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/10 blur-[120px] animate-pulse-glow" />
-      
-      {/* Floating emojis */}
-      <div className="absolute inset-0 overflow-hidden">
-        {emojis.map((emoji, i) => (
-          <FloatingEmoji
-            key={i}
-            emoji={emoji}
-            delay={i * 1.5}
-            duration={8 + Math.random() * 6}
-            left={5 + i * 12}
-          />
-        ))}
-      </div>
 
       {/* Decorative rotating ring */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] border border-primary/10 rounded-full animate-spin-slow pointer-events-none" />
