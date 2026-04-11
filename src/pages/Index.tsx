@@ -484,7 +484,7 @@ const Index = () => {
       {/* ── 9. Footer ── */}
       <footer className="py-12 bg-muted border-t border-border">
         <div className="container px-6 md:px-12 text-center">
-          <img src={logo} alt="Dude Tan" className="h-12 w-auto mx-auto mb-4" loading="lazy" />
+          <img src={logo} alt="Dude Tan" className="h-36 w-auto mx-auto mb-4" loading="lazy" />
           <p className="text-sm text-muted-foreground mb-6">Even it out, dude. 🤙</p>
 
           <div className="w-16 h-px bg-accent/50 mx-auto mb-6" />
