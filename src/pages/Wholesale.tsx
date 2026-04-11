@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CartDrawer } from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
@@ -62,23 +62,10 @@ const Wholesale = () => {
   const scrollY = useScrollPosition();
   const stepsView = useInView({ threshold: 0.2 });
 
-  // Calculator state
-  const [chairs, setChairs] = useState(3);
-  const [clientsPerDay, setClientsPerDay] = useState(8);
-  const [buyPercent, setBuyPercent] = useState(10);
-
   // Form state
   const [form, setForm] = useState(INITIAL_FORM);
 
   const updateField = (field: string, value: string) => setForm(prev => ({ ...prev, [field]: value }));
-
-  // Calculator results
-  const safeChairs = chairs || 0;
-  const safeClients = clientsPerDay || 0;
-  const monthlyUnits = Math.round(safeChairs * safeClients * 22 * (buyPercent / 100));
-  const wholesaleCost = Math.round(monthlyUnits * 24.99);
-  const retailRevenue = Math.round(monthlyUnits * 49.99);
-  const monthlyProfit = Math.round(retailRevenue - wholesaleCost);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -149,7 +136,7 @@ const Wholesale = () => {
 
           <RevealSection delay={0.25}>
             <div className="flex flex-wrap justify-center gap-3">
-              {["50% retail margin", "12-unit minimum order", "Net 30 available"].map((pill) => (
+              {["Competitive wholesale pricing", "Low minimum orders", "Net 30 available"].map((pill) => (
                 <span key={pill} className="bg-card/10 border border-background/20 text-background/80 px-4 py-2 rounded-full text-sm font-medium">
                   {pill}
                 </span>
@@ -168,7 +155,7 @@ const Wholesale = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               { title: "IT SELLS ITSELF", body: "Your barber hands it to a guy with a tan line situation. Guy looks in the mirror. Sale done. No pitch required." },
-              { title: "REAL MARGIN", body: "Wholesale at $24.99. Retails at $49.99. That's $25 profit per unit on a product that fits in one hand and takes zero shelf space to explain." },
+              { title: "REAL MARGIN", body: "Competitive wholesale pricing with strong retail margin. Request our sell sheet for full pricing details — the numbers speak for themselves." },
               { title: "CO-MARKETING INCLUDED", body: "Every opening order ships with Bronzon counter cards and a shelf talker. We make your display look intentional." },
             ].map((card, i) => (
               <RevealSection key={i} delay={i * 0.1}>
@@ -237,76 +224,39 @@ const Wholesale = () => {
         </div>
       </section>
 
-      {/* ── 7. Margin calculator ── */}
+      {/* ── 7. Get pricing ── */}
       <section className="py-16 md:py-24 bg-background">
-        <div className="container px-6 md:px-12 max-w-3xl mx-auto">
+        <div className="container px-6 md:px-12 max-w-2xl mx-auto text-center">
           <RevealSection>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground text-center mb-4">Run the numbers.</h2>
-            <p className="text-lg text-muted-foreground text-center mb-12">See what Dude Tan does for your monthly revenue.</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Want the full pricing breakdown?</h2>
+            <p className="text-lg text-muted-foreground mb-10">
+              We'll send you our wholesale sell sheet with pricing tiers, volume discounts, and everything you need to run the numbers for your shop.
+            </p>
           </RevealSection>
 
           <RevealSection delay={0.1}>
-            <div className="space-y-6 mb-8">
-              <div>
-                <Label htmlFor="calc-chairs" className="text-foreground font-medium mb-2 block">Chairs in your shop</Label>
-                <Input
-                  id="calc-chairs"
-                  type="number"
-                  value={chairs}
-                  onChange={(e) => setChairs(Math.min(50, Math.max(0, parseInt(e.target.value) || 0)))}
-                  min={1} max={50}
-                  className="h-12 text-base"
-                />
-              </div>
-              <div>
-                <Label htmlFor="calc-clients" className="text-foreground font-medium mb-2 block">Clients per chair per day</Label>
-                <Input
-                  id="calc-clients"
-                  type="number"
-                  value={clientsPerDay}
-                  onChange={(e) => setClientsPerDay(Math.min(30, Math.max(0, parseInt(e.target.value) || 0)))}
-                  min={1} max={30}
-                  className="h-12 text-base"
-                />
-              </div>
-              <div>
-                <Label htmlFor="calc-percent" className="text-foreground font-medium mb-2 block">
-                  % who buy Dude Tan — <span className="text-accent font-bold">{buyPercent}%</span>
-                </Label>
-                <Slider
-                  id="calc-percent"
-                  value={[buyPercent]}
-                  onValueChange={(v) => setBuyPercent(v[0])}
-                  min={1} max={50} step={1}
-                  className="py-2"
-                  aria-label="Percentage of clients who buy Dude Tan"
-                />
-              </div>
-            </div>
-
-            <div className="bg-foreground rounded-lg p-8">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="bg-foreground rounded-lg p-8 mb-4">
+              <p className="text-xs font-bold tracking-widest text-background/50 mb-4">WHAT'S IN THE SELL SHEET</p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                 <div>
-                  <p className="text-xs tracking-widest text-background/50 mb-2">MONTHLY UNITS SOLD</p>
-                  <p className="text-2xl font-bold text-background">{monthlyUnits}</p>
+                  <p className="text-background font-bold">Wholesale pricing</p>
+                  <p className="text-background/50 text-sm">By tier and volume</p>
                 </div>
                 <div>
-                  <p className="text-xs tracking-widest text-background/50 mb-2">WHOLESALE COST</p>
-                  <p className="text-2xl font-bold text-background">${wholesaleCost.toLocaleString()}</p>
+                  <p className="text-background font-bold">Suggested retail</p>
+                  <p className="text-background/50 text-sm">Recommended markup</p>
                 </div>
                 <div>
-                  <p className="text-xs tracking-widest text-background/50 mb-2">RETAIL REVENUE</p>
-                  <p className="text-2xl font-bold text-background">${retailRevenue.toLocaleString()}</p>
-                </div>
-                <div>
-                  <p className="text-xs tracking-widest text-background/50 mb-2">YOUR MONTHLY PROFIT</p>
-                  <p className="text-3xl md:text-4xl font-bold text-accent">${monthlyProfit.toLocaleString()}</p>
+                  <p className="text-background font-bold">Volume discounts</p>
+                  <p className="text-background/50 text-sm">Better rates at scale</p>
                 </div>
               </div>
             </div>
-
-            <p className="text-xs text-muted-foreground text-center mt-4">
-              Based on 22 selling days per month. Results vary by location and client volume.
+            <Button variant="hero" className="h-14 px-10 text-lg" onClick={() => scrollTo("apply")}>
+              REQUEST SELL SHEET
+            </Button>
+            <p className="text-xs text-muted-foreground mt-4">
+              Apply below and we'll include the full pricing details in your welcome packet.
             </p>
           </RevealSection>
         </div>
