@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import usePageMeta from "@/hooks/usePageMeta";
+import { useJsonLd, wholesaleServiceSchema, wholesaleFaqSchema } from "@/lib/structuredData";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -65,6 +66,7 @@ const Wholesale = () => {
     title: "Wholesale & Trade Partners | Dude Tan",
     description: "Carry Dude Tan in your barbershop or retail location. 50% retail margin. 12-unit minimum. Apply for a wholesale account today.",
   });
+  useJsonLd([wholesaleServiceSchema, wholesaleFaqSchema]);
 
   const scrollY = useScrollPosition();
   const stepsView = useInView({ threshold: 0.2 });
