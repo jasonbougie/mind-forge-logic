@@ -299,7 +299,7 @@ const ChatWidget = () => {
           </div>
 
           {/* Input */}
-          <div className="border-t border-border p-3 shrink-0">
+          <div className="border-t border-border p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shrink-0">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
