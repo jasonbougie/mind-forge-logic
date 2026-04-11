@@ -56,7 +56,7 @@ export const CartDrawer = () => {
                     <div key={item.variantId} className="flex gap-4 p-2">
                       <div className="w-16 h-16 bg-muted rounded-md overflow-hidden flex-shrink-0">
                         {item.product.node.images?.edges?.[0]?.node && (
-                          <img src={item.product.node.images.edges[0].node.url} alt={item.product.node.title} className="w-full h-full object-cover" width={64} height={64} />
+                          <img src={item.product.node.images.edges[0].node.url} alt={item.product.node.title} className="w-full h-full object-cover" width={64} height={64} loading="lazy" />
                         )}
                       </div>
                       <div className="flex-1 min-w-0">

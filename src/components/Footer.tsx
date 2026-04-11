@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-1">
-            <img src={logo} alt="Dude Tan logo — even it out, dude" className="h-12 mb-4" width={200} height={80} />
+            <img src={logo} alt="Dude Tan logo — even it out, dude" className="h-12 mb-4" width={200} height={80} loading="lazy" />
             <p className="text-primary-foreground/80">
               The first sunless tanner made for dudes. No sunburn, no salon, no judgment.
             </p>

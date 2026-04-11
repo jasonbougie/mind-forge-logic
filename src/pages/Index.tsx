@@ -145,7 +145,7 @@ const Index = () => {
       >
         <div className="container px-6 md:px-12 py-3 flex items-center justify-between">
           <button onClick={() => scrollTo("hero")} className="flex-shrink-0">
-            <img src={logo} alt="Dude Tan" className="h-10 md:h-12 w-auto" width={200} height={80} />
+            <img src={logo} alt="Dude Tan" className="h-10 md:h-12 w-auto" width={200} height={80} fetchPriority="high" />
           </button>
 
           <div className="hidden md:flex items-center gap-8">
@@ -202,6 +202,8 @@ const Index = () => {
             className="w-full h-full object-cover opacity-40 md:opacity-50"
             width={1920}
             height={1024}
+            loading="eager"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/50 to-background" />
         </div>
@@ -222,6 +224,8 @@ const Index = () => {
               className="w-72 md:w-96 rounded-lg animate-subtle-float"
               width={400}
               height={160}
+              loading="eager"
+              fetchPriority="high"
             />
           </div>
 
@@ -480,7 +484,7 @@ const Index = () => {
       {/* ── 9. Footer ── */}
       <footer className="py-12 bg-muted border-t border-border">
         <div className="container px-6 md:px-12 text-center">
-          <img src={logo} alt="Dude Tan" className="h-12 mx-auto mb-4" width={200} height={80} />
+          <img src={logo} alt="Dude Tan" className="h-12 mx-auto mb-4" width={200} height={80} loading="lazy" />
           <p className="text-sm text-muted-foreground mb-6">Even it out, dude. 🤙</p>
 
           <div className="w-16 h-px bg-accent/50 mx-auto mb-6" />

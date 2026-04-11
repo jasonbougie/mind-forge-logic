@@ -50,7 +50,7 @@ const Merch = () => {
       <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
         <div className="container px-6 md:px-12 py-3 flex items-center justify-between">
           <Link to="/" className="flex-shrink-0">
-            <img src={logo} alt="Dude Tan logo" className="h-10 md:h-12 w-auto" width={200} height={80} />
+            <img src={logo} alt="Dude Tan logo" className="h-10 md:h-12 w-auto" width={200} height={80} fetchPriority="high" />
           </Link>
           <div className="flex items-center gap-4">
             <Link to="/shop" className="text-foreground hover:text-accent font-medium transition-colors text-sm hidden md:block">Shop Tanner</Link>
@@ -105,6 +105,7 @@ const Merch = () => {
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             width={800}
                             height={800}
+                            loading="lazy"
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center">
