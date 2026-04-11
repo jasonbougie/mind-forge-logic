@@ -10,6 +10,7 @@ import { CartDrawer } from "@/components/CartDrawer";
 import { useInView } from "@/hooks/useInView";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 import { useActiveSection } from "@/hooks/useActiveSection";
+import usePageMeta from "@/hooks/usePageMeta";
 
 /* ── Scroll-reveal wrapper ── */
 const RevealSection = ({

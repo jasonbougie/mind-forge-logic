@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import usePageMeta from "@/hooks/usePageMeta";
 import { storefrontApiRequest, STOREFRONT_PRODUCTS_QUERY, ShopifyProduct } from "@/lib/shopify";
 import { Button } from "@/components/ui/button";
 import { CartDrawer } from "@/components/CartDrawer";
