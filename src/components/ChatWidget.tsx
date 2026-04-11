@@ -97,6 +97,13 @@ async function streamChat({
   onDone();
 }
 
+const NUDGE_MESSAGES = [
+  "Got a farmer tan? Ask me about it.",
+  "Wondering how to even it out, dude?",
+  "Got questions? I got answers.",
+  "First time? I'll walk you through it.",
+];
+
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
