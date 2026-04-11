@@ -25,7 +25,7 @@ const Merch = () => {
       try {
         const data = await storefrontApiRequest(STOREFRONT_PRODUCTS_QUERY, {
           first: 50,
-          query: "product_type:Merch OR product_type:Apparel OR product_type:Accessories OR product_type:Clothing OR tag:merch",
+          query: "product_type:Merch",
         });
         const edges = data?.data?.products?.edges || [];
         setProducts(edges);

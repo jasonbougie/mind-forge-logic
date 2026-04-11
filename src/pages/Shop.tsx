@@ -25,7 +25,7 @@ const Shop = () => {
       try {
         const data = await storefrontApiRequest(STOREFRONT_PRODUCTS_QUERY, {
           first: 20,
-          query: "product_type:Tanner OR product_type:Sunless OR NOT product_type:Merch NOT product_type:Apparel NOT product_type:Accessories",
+          query: "product_type:Tanner",
         });
         const edges = data?.data?.products?.edges || [];
         setProducts(edges);
