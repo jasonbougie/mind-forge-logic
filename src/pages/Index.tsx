@@ -96,20 +96,8 @@ const Index = () => {
     }
   };
 
-  const handleAddToCart = async () => {
-    if (!shopifyProduct) return;
-    const variant = shopifyProduct.node.variants.edges[0]?.node;
-    if (!variant) return;
-    await addItem({
-      product: shopifyProduct,
-      variantId: variant.id,
-      variantTitle: variant.title,
-      price: variant.price,
-      quantity: 1,
-      selectedOptions: variant.selectedOptions,
-    });
-    toast.success("Added to cart!");
-  };
+
+
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -155,8 +143,10 @@ const Index = () => {
             <button onClick={() => scrollTo("problem")} className={navLinkClass("problem")}>The Problem</button>
             <button onClick={() => scrollTo("how-it-works")} className={navLinkClass("how-it-works")}>How It Works</button>
             <button onClick={() => scrollTo("reviews")} className={navLinkClass("reviews")}>Reviews</button>
+            <Link to="/shop" className="text-foreground hover:text-accent font-medium transition-colors text-sm">Shop</Link>
+            <Link to="/merch" className="text-foreground hover:text-accent font-medium transition-colors text-sm">Merch</Link>
             <CartDrawer />
-            <Button variant="hero" size="sm" onClick={() => scrollTo("shop")}>Shop Now</Button>
+
           </div>
 
           <div className="flex items-center gap-2 md:hidden">
@@ -185,7 +175,8 @@ const Index = () => {
             <button onClick={() => scrollTo("problem")} className="text-foreground font-medium text-left">The Problem</button>
             <button onClick={() => scrollTo("how-it-works")} className="text-foreground font-medium text-left">How It Works</button>
             <button onClick={() => scrollTo("reviews")} className="text-foreground font-medium text-left">Reviews</button>
-            <Button variant="hero" size="sm" onClick={() => scrollTo("shop")}>Shop Now</Button>
+            <Link to="/shop" className="text-foreground font-medium" onClick={() => setMobileMenuOpen(false)}>Shop</Link>
+            <Link to="/merch" className="text-foreground font-medium" onClick={() => setMobileMenuOpen(false)}>Merch</Link>
           </div>
         )}
       </nav>
@@ -420,14 +411,14 @@ const Index = () => {
           </RevealSection>
 
           <RevealSection delay={0.3}>
-            <Button
-              variant="hero"
-              className="h-14 px-12 text-lg mb-4 shimmer-btn"
-              onClick={handleAddToCart}
-              disabled={isLoading || !shopifyProduct}
-            >
-              {isLoading ? "ADDING..." : "ADD TO CART"}
-            </Button>
+            <Link to="/shop">
+              <Button
+                variant="hero"
+                className="h-14 px-12 text-lg mb-4 shimmer-btn"
+              >
+                SHOP NOW
+              </Button>
+            </Link>
             <p className="text-xs text-muted-foreground mt-4">
               Free shipping over $35 · 30-day money back guarantee · No questions asked
             </p>
