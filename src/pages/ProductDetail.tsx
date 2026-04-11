@@ -84,7 +84,7 @@ const ProductDetail = () => {
     <main>
       <Header />
       <div className="container px-6 md:px-12 py-12">
-        <Link to="/#shop" className="inline-flex items-center text-muted-foreground hover:text-foreground mb-8">
+        <Link to="/shop" className="inline-flex items-center text-muted-foreground hover:text-foreground mb-8">
           <ArrowLeft className="h-4 w-4 mr-2" />Back to Shop
         </Link>
 
