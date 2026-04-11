@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "@/assets/dudetan-logo.png";
 import { Button } from "@/components/ui/button";
 import { CartDrawer } from "@/components/CartDrawer";
@@ -7,13 +8,13 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="container px-6 md:px-12 py-4">
         <div className="flex items-center justify-between">
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img src={logo} alt="Dude Tan Logo" className="h-16 md:h-20 w-auto" />
-          </a>
+          </Link>
           
           <nav className="hidden md:flex items-center gap-8">
             <a href="#product" className="text-foreground hover:text-accent font-medium transition-colors">Product</a>
-            <a href="#shop" className="text-foreground hover:text-accent font-medium transition-colors">Shop</a>
+            <Link to="/shop" className="text-foreground hover:text-accent font-medium transition-colors">Shop</Link>
             <a href="#how-it-works" className="text-foreground hover:text-accent font-medium transition-colors">How It Works</a>
             <a href="#reviews" className="text-foreground hover:text-accent font-medium transition-colors">Reviews</a>
             <a href="#about" className="text-foreground hover:text-accent font-medium transition-colors">About</a>
@@ -21,7 +22,9 @@ const Header = () => {
           
           <div className="hidden md:flex items-center gap-3">
             <CartDrawer />
-            <Button variant="hero" size="sm">Shop Now</Button>
+            <Link to="/shop">
+              <Button variant="hero" size="sm">Shop Now</Button>
+            </Link>
           </div>
           
           <div className="flex items-center gap-2 md:hidden">
