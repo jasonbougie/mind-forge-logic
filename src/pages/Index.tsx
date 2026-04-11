@@ -218,7 +218,7 @@ const Index = () => {
           <div className={`transition-all duration-1000 ease-out ${mounted ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-90"}`}>
             <img
               src={logo}
-              alt="Dude Tan - Triple Bronzer Formula"
+              alt="Dude Tan sunless tanner for men logo"
               className="w-72 md:w-96 rounded-lg animate-subtle-float"
             />
           </div>
