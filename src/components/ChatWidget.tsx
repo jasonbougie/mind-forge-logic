@@ -225,7 +225,7 @@ const ChatWidget = () => {
       <button
         onClick={handleOpen}
         aria-label={isOpen ? "Close chat" : "Chat with us"}
-        className={`fixed bottom-6 right-6 z-[60] w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center hover:scale-105 overflow-hidden border-2 border-primary ${!hasInteracted && !isOpen ? "animate-[bounce_2s_ease-in-out_infinite]" : ""}`}
+        className={`fixed bottom-6 right-6 z-[60] w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center hover:scale-105 overflow-hidden border-2 border-primary ${!hasInteracted && !isOpen ? "animate-[bounce_2s_ease-in-out_infinite]" : ""} ${isOpen ? "hidden md:flex" : ""}`}
       >
         {isOpen ? (
           <div className="w-full h-full bg-primary flex items-center justify-center text-primary-foreground">
