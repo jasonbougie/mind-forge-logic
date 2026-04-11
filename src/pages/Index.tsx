@@ -21,7 +21,7 @@ const Index = () => {
         <img
           src={logo}
           alt="Dude Tan - Triple Bronzer Formula"
-          className="w-72 md:w-80 rounded-lg shadow-lg"
+          className="w-[36rem] md:w-[40rem] rounded-lg shadow-lg"
         />
 
         <div className="space-y-3">
