@@ -103,6 +103,8 @@ const Merch = () => {
                             src={image.url}
                             alt={image.altText || `${node.title} — Dude Tan`}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            width={800}
+                            height={800}
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center">
