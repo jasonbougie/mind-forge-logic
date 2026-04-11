@@ -34,6 +34,7 @@ const ProductDetail = () => {
     };
   }, [product]);
 
+  useEffect(() => {
     const fetchProduct = async () => {
       if (!handle) return;
       try {
