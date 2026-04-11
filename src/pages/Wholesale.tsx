@@ -118,9 +118,9 @@ const Wholesale = () => {
           <img
             src={wholesaleDisplay}
             alt="Dude Tan counter display in a barbershop"
-            className="w-full h-full object-cover opacity-20 md:opacity-25"
+            className="w-full h-full object-cover opacity-50 md:opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/80 to-foreground" />
+          <div className="absolute inset-0 bg-gradient-to-b from-foreground/30 via-foreground/50 to-foreground/80" />
         </div>
 
         <div className="relative z-10 container px-6 md:px-12 text-center max-w-4xl mx-auto">
