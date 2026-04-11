@@ -109,8 +109,40 @@ const ChatWidget = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [nudge, setNudge] = useState<string | null>(null);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Nudge bubble: show after 5s, rotate every 8s, hide after interaction
+  useEffect(() => {
+    if (hasInteracted || isOpen) {
+      setNudge(null);
+      return;
+    }
+
+    const showTimer = setTimeout(() => {
+      setNudge(NUDGE_MESSAGES[0]);
+    }, 5000);
+
+    const rotateTimer = setInterval(() => {
+      setNudge((prev) => {
+        const idx = prev ? NUDGE_MESSAGES.indexOf(prev) : -1;
+        return NUDGE_MESSAGES[(idx + 1) % NUDGE_MESSAGES.length];
+      });
+    }, 8000);
+
+    return () => {
+      clearTimeout(showTimer);
+      clearInterval(rotateTimer);
+    };
+  }, [hasInteracted, isOpen]);
+
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+    setHasInteracted(true);
+    setNudge(null);
+  };
 
   useEffect(() => {
     if (scrollRef.current) {
