@@ -143,6 +143,7 @@ const Index = () => {
             <button onClick={() => scrollTo("problem")} className={navLinkClass("problem")}>The Problem</button>
             <button onClick={() => scrollTo("how-it-works")} className={navLinkClass("how-it-works")}>How It Works</button>
             <button onClick={() => scrollTo("reviews")} className={navLinkClass("reviews")}>Reviews</button>
+            <Link to="/wholesale" className="text-foreground hover:text-accent font-medium transition-colors text-sm">Partners</Link>
             <Link to="/shop" className="text-foreground hover:text-accent font-medium transition-colors text-sm">Shop</Link>
             <Link to="/merch" className="text-foreground hover:text-accent font-medium transition-colors text-sm">Merch</Link>
             <CartDrawer />
@@ -175,6 +176,7 @@ const Index = () => {
             <button onClick={() => scrollTo("problem")} className="text-foreground font-medium text-left">The Problem</button>
             <button onClick={() => scrollTo("how-it-works")} className="text-foreground font-medium text-left">How It Works</button>
             <button onClick={() => scrollTo("reviews")} className="text-foreground font-medium text-left">Reviews</button>
+            <Link to="/wholesale" className="text-foreground font-medium" onClick={() => setMobileMenuOpen(false)}>Partners</Link>
             <Link to="/shop" className="text-foreground font-medium" onClick={() => setMobileMenuOpen(false)}>Shop</Link>
             <Link to="/merch" className="text-foreground font-medium" onClick={() => setMobileMenuOpen(false)}>Merch</Link>
           </div>
