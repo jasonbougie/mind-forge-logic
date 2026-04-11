@@ -6,6 +6,11 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/dudetan-logo.png";
 
 const NotFound = () => {
+  usePageMeta({
+    title: "Page Not Found | Dude Tan",
+    robots: "noindex",
+  });
+
   const location = useLocation();
 
   useEffect(() => {

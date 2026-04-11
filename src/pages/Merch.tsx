@@ -18,6 +18,11 @@ const RevealSection = ({ children, className = "", delay = 0 }: { children: Reac
 };
 
 const Merch = () => {
+  usePageMeta({
+    title: "Dude Tan Merch | Hats, Shirts & Gear",
+    description: "Rep the brand. Dude Tan hats, shirts, and hoodies for men who like to even it out.",
+  });
+
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [loading, setLoading] = useState(true);
 

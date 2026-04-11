@@ -61,6 +61,11 @@ const INITIAL_FORM = {
 };
 
 const Wholesale = () => {
+  usePageMeta({
+    title: "Wholesale & Trade Partners | Dude Tan",
+    description: "Carry Dude Tan in your barbershop or retail location. 50% retail margin. 12-unit minimum. Apply for a wholesale account today.",
+  });
+
   const scrollY = useScrollPosition();
   const stepsView = useInView({ threshold: 0.2 });
 
