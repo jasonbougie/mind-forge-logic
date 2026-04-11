@@ -32,11 +32,11 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-bold mb-4">Legal</h4>
+            <h4 className="font-bold mb-4">Follow Us</h4>
             <ul className="space-y-2 text-primary-foreground/80">
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Shipping Info</a></li>
+              <li><a href="https://www.instagram.com/dude_tan/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">Instagram</a></li>
+              <li><a href="https://www.tiktok.com/@thedude.tan" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">TikTok</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">X / Twitter</a></li>
             </ul>
           </div>
         </div>
