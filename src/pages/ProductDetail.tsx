@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Loader2, ArrowLeft, ShoppingBag } from "lucide-react";
 import { toast } from "sonner";
+import productBottle from "@/assets/dude-tan-bottle.png";
 
 const ProductDetail = () => {
   const { handle } = useParams<{ handle: string }>();
@@ -120,36 +121,17 @@ const ProductDetail = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Images */}
           <div className="space-y-4">
-            <div className="aspect-square bg-muted rounded-lg overflow-hidden">
-              {images[selectedImage]?.node ? (
-                <img
-                  src={images[selectedImage].node.url}
-                  alt={images[selectedImage].node.altText || `${product.title} — Dude Tan sunless tanner for men`}
-                  className="w-full h-full object-cover"
-                  width={800}
-                  height={800}
-                  loading="eager"
-                  fetchPriority="high"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center">
-                  <ShoppingBag className="h-16 w-16 text-muted-foreground" />
-                </div>
-              )}
+            <div className="aspect-[3/4] bg-muted rounded-lg overflow-hidden">
+              <img
+                src={productBottle}
+                alt="Dude Tan Triple Bronzer Formula — Even it out, dude."
+                className="w-full h-full object-contain"
+                width={600}
+                height={800}
+                loading="eager"
+                fetchPriority="high"
+              />
             </div>
-            {images.length > 1 && (
-              <div className="flex gap-2 overflow-x-auto">
-                {images.map((img: any, i: number) => (
-                  <button
-                    key={i}
-                    onClick={() => setSelectedImage(i)}
-                    className={`w-20 h-20 rounded-md overflow-hidden flex-shrink-0 border-2 ${i === selectedImage ? 'border-primary' : 'border-transparent'}`}
-                  >
-                    <img src={img.node.url} alt={img.node.altText || `${product.title} — Dude Tan sunless tanner for men`} className="w-full h-full object-cover" width={80} height={80} loading="lazy" />
-                  </button>
-                ))}
-              </div>
-            )}
           </div>
 
           {/* Details */}
