@@ -564,8 +564,39 @@ const Index = () => {
         <p>Dude Tan is a spray-on sunless tanner made specifically for men who want to fix uneven tan lines. Common tan line problems it solves include farmer tans where forearms and face are darker than the chest, sock tans from wearing shoes and socks outdoors, t-shirt tan lines where the sleeve creates a visible border, and golf tan lines from wearing polo shirts. Dude Tan's triple bronzer formula applies in 60 seconds, dries without streaks, has no fragrance, and is vegan and cruelty-free. It is designed for men who have never used a self-tanner before and want a product that works simply without requiring any expertise or special application tools.</p>
       </div>
 
+      {/* ── 8b. Quick FAQ — handles common pre-purchase questions ── */}
+      <section id="faq" className="py-12 md:py-16 bg-muted border-t border-border">
+        <div className="container px-6 md:px-12 max-w-3xl mx-auto">
+          <RevealSection>
+            <p className="text-xs font-bold tracking-[0.3em] text-accent text-center mb-3">QUICK ANSWERS</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-10">
+              Stuff dudes ask before they buy
+            </h2>
+          </RevealSection>
+          <div className="space-y-4">
+            {[
+              { q: "Will it turn me orange?", a: "No. Triple bronzer formula matches your natural skin tone — it doesn't sit on top in one color like the cheap stuff." },
+              { q: "Will it streak?", a: "Two sweeps with the spray, dries in 60 seconds. No rubbing in. No mitts. No streaks." },
+              { q: "Does it smell weird?", a: "Zero coconut. Zero spa funk. Just clean — your wife won't know unless you tell her." },
+              { q: "How long does it last?", a: "Five to seven days per application. One bottle = roughly 30 days." },
+              { q: "Shipping & returns?", a: "Free shipping on US orders over $35. 30-day money-back guarantee, no questions asked. Email support@dudetan.shop." },
+            ].map((item, i) => (
+              <RevealSection key={i} delay={i * 0.05}>
+                <details className="bg-card border border-border rounded-lg p-5 group">
+                  <summary className="font-bold text-foreground cursor-pointer list-none flex justify-between items-center">
+                    <span>{item.q}</span>
+                    <span className="text-accent text-2xl leading-none transition-transform group-open:rotate-45">+</span>
+                  </summary>
+                  <p className="text-muted-foreground mt-3 leading-relaxed">{item.a}</p>
+                </details>
+              </RevealSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── 9. Footer ── */}
-      <footer className="py-12 bg-muted border-t border-border">
+      <footer className="py-12 bg-background border-t border-border">
         <div className="container px-6 md:px-12 text-center">
           <img src={logo} alt="Dude Tan" className="h-36 w-auto mx-auto mb-4" loading="lazy" />
           <p className="text-sm text-muted-foreground mb-6">Even it out, dude. 🤙</p>
@@ -584,12 +615,12 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="flex justify-center gap-6 mb-8">
-            {["Contact", "Shipping", "Returns"].map((link) => (
-              <a key={link} href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-                {link}
-              </a>
-            ))}
+          <div className="flex flex-wrap justify-center gap-6 mb-8">
+            <a href="mailto:support@dudetan.shop" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+            <a href="#faq" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Shipping</a>
+            <a href="#faq" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Returns</a>
+            <a href="#faq" className="text-xs text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
+            <Link to="/wholesale" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Wholesale</Link>
           </div>
 
           <p className="text-xs text-muted-foreground">© 2026 Dude Tan · dudetan.shop</p>
