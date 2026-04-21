@@ -114,27 +114,40 @@ const ChatWidget = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Nudge bubble: show after 5s, rotate every 8s, hide after interaction
+  // Nudge bubble: show only after user scrolls (so it doesn't cover hero CTA on mobile)
+  // then rotate every 10s. Hide after interaction.
   useEffect(() => {
     if (hasInteracted || isOpen) {
       setNudge(null);
       return;
     }
 
-    const showTimer = setTimeout(() => {
-      setNudge(NUDGE_MESSAGES[0]);
-    }, 5000);
+    let shown = false;
+    let rotateTimer: ReturnType<typeof setInterval> | null = null;
 
-    const rotateTimer = setInterval(() => {
-      setNudge((prev) => {
-        const idx = prev ? NUDGE_MESSAGES.indexOf(prev) : -1;
-        return NUDGE_MESSAGES[(idx + 1) % NUDGE_MESSAGES.length];
-      });
-    }, 8000);
+    const triggerNudge = () => {
+      if (shown) return;
+      shown = true;
+      setNudge(NUDGE_MESSAGES[0]);
+      rotateTimer = setInterval(() => {
+        setNudge((prev) => {
+          const idx = prev ? NUDGE_MESSAGES.indexOf(prev) : -1;
+          return NUDGE_MESSAGES[(idx + 1) % NUDGE_MESSAGES.length];
+        });
+      }, 10000);
+    };
+
+    // Show after 12s OR once the user has scrolled past 400px — whichever happens first
+    const showTimer = setTimeout(triggerNudge, 12000);
+    const onScroll = () => {
+      if (window.scrollY > 400) triggerNudge();
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
       clearTimeout(showTimer);
-      clearInterval(rotateTimer);
+      if (rotateTimer) clearInterval(rotateTimer);
+      window.removeEventListener("scroll", onScroll);
     };
   }, [hasInteracted, isOpen]);
 
