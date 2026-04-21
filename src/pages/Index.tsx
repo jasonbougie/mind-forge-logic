@@ -193,7 +193,7 @@ const Index = () => {
       </nav>
 
       {/* ── 3. Hero Section — parallax bg + animated CTA ── */}
-      <section id="hero" className="relative overflow-hidden py-16 md:py-24">
+      <section id="hero" className="relative overflow-hidden py-6 md:py-24">
         {/* Hero background image */}
         <div className="absolute inset-0 z-0">
           <img
@@ -216,12 +216,12 @@ const Index = () => {
           style={{ transform: `translate(-50%, calc(-50% + ${scrollY * 0.1}px))` }}
         />
 
-        <div className="container px-6 md:px-12 relative z-10 flex flex-col items-center text-center gap-8">
+        <div className="container px-6 md:px-12 relative z-10 flex flex-col items-center text-center gap-5 md:gap-8">
           <div className={`transition-all duration-1000 ease-out ${mounted ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-90"}`}>
             <img
               src={logo}
               alt="Dude Tan sunless tanner for men logo"
-              className="w-72 md:w-96 rounded-lg animate-subtle-float"
+              className="w-44 md:w-96 rounded-lg animate-subtle-float"
               width={400}
               height={160}
               loading="eager"
@@ -229,29 +229,112 @@ const Index = () => {
             />
           </div>
 
-          <div className={`space-y-4 max-w-2xl transition-all duration-1000 ease-out delay-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground">
+          <div className={`space-y-3 md:space-y-4 max-w-2xl transition-all duration-1000 ease-out delay-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            <h1 className="text-3xl md:text-6xl font-bold text-foreground leading-tight">
               Fix Your Farmer Tan — Sunless Tanner for Men
             </h1>
             <span className="sr-only">Dude Tan spray-on self tanner for men fixes uneven farmer tans, sock tans, and t-shirt tan lines in 60 seconds.</span>
-            <p className="text-lg md:text-xl text-muted-foreground">
+            <p className="text-base md:text-xl text-muted-foreground">
               The first sunless tanner made for <span className="font-bold text-accent">DUDES</span>. No sunburn, no salon, no judgment.
             </p>
           </div>
 
-          <div className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 ease-out delay-500 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <div className={`flex flex-col sm:flex-row gap-3 transition-all duration-1000 ease-out delay-500 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <Link to="/shop">
               <Button
                 variant="hero"
                 className="h-12 px-8 text-lg animate-glow-pulse shimmer-btn"
               >
-                SHOP NOW
+                EVEN IT OUT, DUDE
               </Button>
             </Link>
-            <Button variant="outline" className="h-12 px-8 text-lg border-2 border-foreground text-foreground hover:bg-foreground hover:text-background">
-              WATCH THE AD
-            </Button>
           </div>
+
+          {/* Trust strip — directly under CTA, above the fold */}
+          <div className={`flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs md:text-sm text-muted-foreground transition-all duration-1000 delay-700 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-3.5 h-3.5 fill-accent text-accent" />
+                ))}
+              </span>
+              <span className="font-medium text-foreground">Loved by dudes</span>
+            </span>
+            <span className="hidden sm:inline opacity-40">·</span>
+            <span className="font-medium">30-day money-back</span>
+            <span className="hidden sm:inline opacity-40">·</span>
+            <span className="font-medium">Free shipping $35+</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3b. Objection-busting band — addresses the 3 men's self-tanner fears ── */}
+      <section className="py-8 md:py-10 bg-foreground border-y border-accent/20">
+        <div className="container px-6 md:px-12">
+          <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto text-center">
+            {[
+              { kill: "ORANGE", line: "Triple bronzer matches your skin." },
+              { kill: "STREAKS", line: "Spray on, dries even in 60 seconds." },
+              { kill: "SMELL", line: "Zero coconut. Zero spa funk." },
+            ].map((item, i) => (
+              <div key={i} className="space-y-1">
+                <p className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent">
+                  NO <span className="line-through opacity-70">{item.kill}</span>
+                </p>
+                <p className="text-xs md:text-sm text-background/80">{item.line}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3c. Before / After proof ── */}
+      <section className="py-12 md:py-20 bg-background">
+        <div className="container px-6 md:px-12">
+          <RevealSection>
+            <p className="text-xs font-bold tracking-[0.3em] text-accent text-center mb-3">THE FIX</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground text-center mb-3">
+              Before. After. Same dude.
+            </h2>
+            <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">
+              Two sweeps. One minute. Farmer tan gone. No orange. No streaks. Nobody knows.
+            </p>
+          </RevealSection>
+
+          <RevealSection delay={0.1}>
+            <div className="grid grid-cols-2 gap-3 md:gap-6 max-w-3xl mx-auto">
+              <div className="relative rounded-xl overflow-hidden border-2 border-border aspect-[3/4] bg-muted">
+                <img
+                  src={heroBg}
+                  alt="Before — visible farmer tan with darker forearms and pale chest"
+                  className="w-full h-full object-cover grayscale"
+                  loading="lazy"
+                  width={600}
+                  height={800}
+                />
+                <div className="absolute inset-0 bg-foreground/20" />
+                <span className="absolute top-3 left-3 text-[10px] md:text-xs font-bold tracking-[0.2em] bg-foreground text-background px-2 py-1 rounded">
+                  BEFORE
+                </span>
+              </div>
+              <div className="relative rounded-xl overflow-hidden border-2 border-accent aspect-[3/4] bg-muted">
+                <img
+                  src={heroBg}
+                  alt="After — even tan across chest, shoulders, and arms after using Dude Tan"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  width={600}
+                  height={800}
+                />
+                <span className="absolute top-3 left-3 text-[10px] md:text-xs font-bold tracking-[0.2em] bg-accent text-accent-foreground px-2 py-1 rounded">
+                  AFTER
+                </span>
+              </div>
+            </div>
+            <p className="text-center text-xs text-muted-foreground italic mt-4">
+              Real customer photos coming soon — submit yours to support@dudetan.shop.
+            </p>
+          </RevealSection>
         </div>
       </section>
 
